@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Moderna Converter</string>
+
+    <string name="toolbar_text">Moderna</string>
+
+    <!-- ConvertFragment Strings -->
+    <string name="header_top_text_convertfragment">Quick &amp; Free</string>
+    <string name="header_bottom_text_convertfragment">Currency Converter</string>
+
+</resources>
