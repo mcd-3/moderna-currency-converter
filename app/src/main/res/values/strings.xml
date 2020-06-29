@@ -6,5 +6,9 @@
     <!-- ConvertFragment Strings -->
     <string name="header_top_text_convertfragment">Quick &amp; Free</string>
     <string name="header_bottom_text_convertfragment">Currency Converter</string>
+    <string name="submit_button_convertfragment">Submit</string>
+
+    <!-- Imageview Content Descriptions -->
+    <string name="cd_swap_ic">Swap Icon</string>
 
 </resources>

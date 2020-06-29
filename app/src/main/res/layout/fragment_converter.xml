@@ -10,11 +10,11 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/currency_button_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_custom_flag"
         android:drawableStart="@drawable/ic_usd"
-        android:drawablePadding="12dp"
         android:text="USD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +52,7 @@
 
     <EditText
         android:id="@+id/currency_edit_text"
-        android:layout_width="250dp"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_border"
         android:ems="10"
@@ -65,11 +65,11 @@
         app:layout_constraintVertical_bias="0.467" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/currency_button_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_custom_flag"
         android:drawableStart="@drawable/ic_eur"
-        android:drawablePadding="8dp"
         android:text="EUR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,9 +80,10 @@
 
     <Button
         android:id="@+id/submit_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
+        android:layout_width="164dp"
+        android:layout_height="60dp"
+        android:text="@string/submit_button_convertfragment"
+        android:textSize="@dimen/medium_text"
         android:textColor="?android:textColorSecondary"
         android:background="@drawable/button_custom_submit"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -93,9 +94,10 @@
         app:layout_constraintVertical_bias="0.677" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/swap_image_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/cd_swap_ic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
