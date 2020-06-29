@@ -8,6 +8,11 @@
     <color name="blue">#2a3b87</color>
     <color name="dark_blue">#212e69</color>
     <color name="purple">#4b2a87</color>
+    <color name="pink">#ff8fd6</color>
+    <color name="red">#ff859b</color>
+    <color name="dark_pink">#d676b3</color>
+    <color name="dark_red">#c46677</color>
     <color name="white">#ffffff</color>
+    <color name="grey">#44999999</color>
     <color name="black">#000000</color>
 </resources>

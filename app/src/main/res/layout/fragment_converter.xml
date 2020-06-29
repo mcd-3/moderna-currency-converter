@@ -79,10 +79,12 @@
         app:layout_constraintVertical_bias="0.546" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
+        android:textColor="?android:textColorSecondary"
+        android:background="@drawable/button_custom_submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

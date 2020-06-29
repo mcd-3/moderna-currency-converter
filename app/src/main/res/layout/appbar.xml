@@ -11,6 +11,6 @@
         android:layout_height="wrap_content"
         android:text="@string/toolbar_text"
         android:textSize="24sp"
-        android:textColor="?android:textColorPrimary"/>
+        android:textColor="?android:textColorSecondary"/>
 
 </androidx.appcompat.widget.Toolbar>
