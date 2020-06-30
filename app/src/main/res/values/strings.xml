@@ -6,7 +6,11 @@
     <!-- ConvertFragment Strings -->
     <string name="header_top_text_convertfragment">Quick &amp; Free</string>
     <string name="header_bottom_text_convertfragment">Currency Converter</string>
-    <string name="submit_button_convertfragment">Submit</string>
+    <string name="convert_button_convertfragment">Convert</string>
+    <string name="paragraph_text_convertfragment">Data fetched using exchangeratesapi.io\nWith rates provided by</string>
+    <string name="bank_text_convertfragment">The Central European Bank</string>
+    <string name="from_convertfragment">From</string>
+    <string name="to_convertfragment">To</string>
 
     <!-- Imageview Content Descriptions -->
     <string name="cd_swap_ic">Swap Icon</string>
