@@ -6,8 +6,7 @@
     android:id="@+id/content_motion_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layoutDescription="@xml/fragment_converter_scene"
-    tools:context=".MainActivity">
+    app:layoutDescription="@xml/fragment_converter_scene">
 
     <Button
         android:id="@+id/currency_button_left"
@@ -29,7 +28,7 @@
         android:layout_height="wrap_content"
         android:text="@string/header_top_text_convertfragment"
         android:textColor="?android:textColorSecondary"
-        android:textSize="@dimen/medium_text"
+        android:textSize="@dimen/big_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -94,6 +93,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.618" />
+
+    <!-- TODO: Make a linearLayout that contains the conversion, and make it slide up from beneath the screen-->
 
     <ImageView
         android:id="@+id/swap_image_view"
@@ -165,7 +166,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.418" />
 
-    <!-- TODO: Make a linearLayout that contains the conversion, and make it slide up from beneath the screen-->
     <LinearLayout
         android:id="@+id/results_li"
         android:layout_width="match_parent"
