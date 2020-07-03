@@ -345,9 +345,9 @@
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
             android:visibility="invisible"
-            motion:layout_constraintVertical_bias="0.87"
+            motion:layout_constraintVertical_bias="0.922"
             motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintHorizontal_bias="0.493"
+            motion:layout_constraintHorizontal_bias="0.496"
             motion:layout_constraintStart_toStartOf="parent"
             android:id="@+id/update_text" />
         <Constraint
@@ -356,11 +356,17 @@
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
             android:visibility="invisible"
-            motion:layout_constraintVertical_bias="0.90999997"
+            motion:layout_constraintVertical_bias="0.952"
             motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintHorizontal_bias="0.497"
+            motion:layout_constraintHorizontal_bias="0.511"
             motion:layout_constraintStart_toStartOf="parent"
             android:id="@+id/date_text" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_editor_absoluteX="53dp"
+            android:layout_width="match_parent"
+            motion:layout_constraintTop_toBottomOf="parent"
+            android:id="@+id/results_li" />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
@@ -369,7 +375,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintVertical_bias="0.90999997"
+            motion:layout_constraintVertical_bias="0.977"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintHorizontal_bias="0.497"
             motion:layout_constraintStart_toStartOf="parent"
@@ -379,7 +385,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintVertical_bias="0.87"
+            motion:layout_constraintVertical_bias="0.945"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintHorizontal_bias="0.493"
             motion:layout_constraintStart_toStartOf="parent"
@@ -482,7 +488,7 @@
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintVertical_bias="0.535"
+            motion:layout_constraintVertical_bias="0.614"
             motion:layout_constraintHorizontal_bias="0.0" />
         <Constraint
             motion:layout_constraintVertical_bias="0.100000024"
@@ -494,5 +500,23 @@
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="wrap_content"
             android:id="@+id/calculation_header_text" />
+        <Constraint
+            motion:layout_constraintVertical_bias="0.842"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/update_text" />
+        <Constraint
+            motion:layout_constraintVertical_bias="0.885"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/date_text" />
     </ConstraintSet>
 </MotionScene>
