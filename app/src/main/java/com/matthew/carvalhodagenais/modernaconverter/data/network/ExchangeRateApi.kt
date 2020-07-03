@@ -17,7 +17,7 @@ interface ExchangeRateApi {
     companion object {
         operator fun invoke(): ExchangeRateApi {
             return Retrofit.Builder()
-                .baseUrl("https://api.exchangeratesapi.io/latest")
+                .baseUrl("https://api.exchangeratesapi.io/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(ExchangeRateApi::class.java)

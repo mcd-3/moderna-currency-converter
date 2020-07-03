@@ -6,9 +6,9 @@ import androidx.lifecycle.ViewModel
 import com.matthew.carvalhodagenais.modernaconverter.data.entities.ExchangeRate
 import com.matthew.carvalhodagenais.modernaconverter.data.repositories.ExchangeRateRepository
 
-class ConvertFragmentViewModel: ViewModel() {
+class ConvertViewModel: ViewModel() {
 
-    val repo = ExchangeRateRepository()
+    private val repo = ExchangeRateRepository()
 
     fun getRates(base: String): LiveData<ExchangeRate> {
         return repo.fetchRates(base)

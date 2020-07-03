@@ -5,4 +5,7 @@ data class ExchangeRate(
     val date: String,
     val rates: Map<String, Double>
 ) {
+    fun convert(newCur: String): Double? {
+        return rates[newCur]
+    }
 }
