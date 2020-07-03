@@ -8,6 +8,48 @@
     android:layout_height="match_parent"
     app:layoutDescription="@xml/fragment_converter_scene">
 
+    <LinearLayout
+        android:id="@+id/results_li"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="32dp"
+        android:paddingBottom="32dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintTop_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:textColor="?android:textColorSecondary"
+            android:textStyle="italic"
+            android:text="EUR 0.00" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="?android:textColorSecondary"
+            android:textStyle="italic"
+            android:text="is" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:textColor="?android:textColorSecondary"
+            android:textStyle="bold"
+            android:textSize="@dimen/big_text"
+            android:text="USD 200,000.00" />
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/currency_button_left"
         android:layout_width="wrap_content"
@@ -51,6 +93,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.196" />
 
+    <TextView
+        android:id="@+id/calculation_header_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Calculation"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="@dimen/large_text"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.196" />
+
     <EditText
         android:id="@+id/currency_edit_text"
         android:layout_width="260dp"
@@ -64,6 +122,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.355" />
+
+    <ImageView
+        android:id="@+id/swap_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cd_swap_ic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.465"
+        app:srcCompat="@drawable/ic_baseline_swap_48" />
 
     <Button
         android:id="@+id/currency_button_right"
@@ -93,21 +164,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.618" />
-
-    <!-- TODO: Make a linearLayout that contains the conversion, and make it slide up from beneath the screen-->
-
-    <ImageView
-        android:id="@+id/swap_image_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/cd_swap_ic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.465"
-        app:srcCompat="@drawable/ic_baseline_swap_48" />
 
     <TextView
         android:id="@+id/paragraph_text"
@@ -167,21 +223,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.418" />
-
-    <LinearLayout
-        android:id="@+id/results_li"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="32dp"
-        android:paddingBottom="32dp"
-        app:layout_constraintTop_toBottomOf="parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!" />
-
-    </LinearLayout>
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

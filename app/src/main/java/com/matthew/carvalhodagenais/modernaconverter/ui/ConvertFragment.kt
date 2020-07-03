@@ -29,8 +29,14 @@ class ConvertFragment: Fragment() {
     }
 
     private val submitButtonOnClick = View.OnClickListener {
-        (activity as MainActivity).convertViewModel.getRates("EUR").observe(this, Observer {
-            Log.e("THINGY", it.toString())
+        submit_button.isClickable = false
+        (activity as MainActivity).convertViewModel.getRates(currency_button_left.text.toString()).observe(this, Observer {
+            if (it != null) {
+                Log.e("THINGY", it.rates[currency_button_right.text.toString()].toString())
+                submit_button.isClickable = true
+                content_motion_layout.setTransition(R.id.start_to_end)
+                content_motion_layout.transitionToEnd()
+            }
         })
     }
 }
