@@ -19,6 +19,7 @@
         tools:layout_editor_absoluteX="53dp">
 
         <TextView
+            android:id="@+id/base_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -32,11 +33,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="is"
+            android:text="@string/is_convertfragment"
             android:textColor="?android:textColorSecondary"
             android:textStyle="italic" />
 
         <TextView
+            android:id="@+id/conversion_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -97,7 +99,7 @@
         android:id="@+id/calculation_header_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your Calculation"
+        android:text="@string/calculation_text_convertfragment"
         android:textColor="?android:textColorSecondary"
         android:textSize="@dimen/large_text"
         android:textStyle="bold"
@@ -228,7 +230,7 @@
         android:id="@+id/update_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rates are updated daily"
+        android:text="@string/update_convertfragment"
         android:textColor="?android:textColorSecondary"
         android:textSize="@dimen/medium_text"
         android:textStyle="italic"
@@ -245,7 +247,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Last Updated: today"
+        android:text="@string/date_convertfragment"
         android:textColor="?android:textColorSecondary"
         android:textSize="@dimen/big_text"
         android:textStyle="bold|italic"
