@@ -50,7 +50,7 @@ class ConvertFragment: Fragment() {
                 if (it != null) {
                     base_text.text = "${it.base} ${currency_edit_text.text}"
                     conversion_text.text =
-                        "${currency_button_right.text} ${(currency_edit_text.text.toString().toDouble()) * (it.rates[currency_button_right.text].toString().toDouble())}"
+                        "${currency_button_right.text} ${(currency_edit_text.text.toString().toBigDecimal()) * (it.rates[currency_button_right.text].toString().toBigDecimal())}"
                     content_motion_layout.setTransition(R.id.start_to_end)
                     content_motion_layout.transitionToEnd()
                 } else { // 1) no internet 2) no response
