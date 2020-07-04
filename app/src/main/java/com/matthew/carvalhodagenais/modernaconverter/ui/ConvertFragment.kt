@@ -2,18 +2,16 @@ package com.matthew.carvalhodagenais.modernaconverter.ui
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.core.content.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
 import com.matthew.carvalhodagenais.modernaconverter.MainActivity
 import com.matthew.carvalhodagenais.modernaconverter.R
+import com.matthew.carvalhodagenais.modernaconverter.utils.NetworkConnectivityUtil
 import kotlinx.android.synthetic.main.fragment_converter.*
 
 class ConvertFragment: Fragment() {
@@ -29,7 +27,6 @@ class ConvertFragment: Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
         submit_button.setOnClickListener(submitButtonOnClick)
     }
 
@@ -45,21 +42,43 @@ class ConvertFragment: Fragment() {
             val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(view?.windowToken, 0)
 
-            // Convert the currency
+            // Convert the currency and set the TextViews with the proper strings
             (activity as MainActivity).convertViewModel.getRates(currency_button_left.text.toString()).observe(this, Observer {
                 if (it != null) {
-                    base_text.text = "${it.base} ${currency_edit_text.text}"
+                    base_text.text =
+                        String.format(resources.getString(R.string.base_convertfragment),
+                            it.base,
+                            currency_edit_text.text.toString().toBigDecimal())
                     conversion_text.text =
-                        "${currency_button_right.text} ${(currency_edit_text.text.toString().toBigDecimal()) * (it.rates[currency_button_right.text].toString().toBigDecimal())}"
+                        String.format(resources.getString(R.string.conversion_convertfragment),
+                            currency_button_right.text.toString(),
+                            (currency_edit_text.text.toString().toBigDecimal())
+                                    * (it.rates[currency_button_right.text].toString().toBigDecimal()))
                     content_motion_layout.setTransition(R.id.start_to_end)
                     content_motion_layout.transitionToEnd()
                 } else { // 1) no internet 2) no response
-
+                    if (NetworkConnectivityUtil().hasNetworkConnection(requireContext())) {
+                        Snackbar.make(
+                            content_motion_layout,
+                            resources.getString(R.string.no_connection_snackbar),
+                            Snackbar.LENGTH_LONG
+                        ).show()
+                    } else {
+                        Snackbar.make(
+                            content_motion_layout,
+                            resources.getString(R.string.no_api_snackbar),
+                            Snackbar.LENGTH_LONG
+                        ).show()
+                    }
                 }
                 submit_button.isClickable = true
             })
         } else { // No amount put in the EditText
-            Snackbar.make(content_motion_layout, "Enter an amount", Snackbar.LENGTH_LONG).show()
+            Snackbar.make(
+                content_motion_layout,
+                resources.getString(R.string.no_amount_snackbar),
+                Snackbar.LENGTH_LONG
+            ).show()
         }
     }
 }
