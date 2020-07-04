@@ -33,14 +33,19 @@ class ConvertFragment: Fragment() {
         submit_button.setOnClickListener(submitButtonOnClick)
     }
 
+    /**
+     * OnClickListener for the "calculate currency" button
+     * Takes the base currency and the amount and converts it to the selected "to" currency
+     */
     private val submitButtonOnClick = View.OnClickListener {
         if (currency_edit_text.text.toString().trim() != "") {
+            submit_button.isClickable = false
 
+            // Close the keyboard
             val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(view?.windowToken, 0)
 
-            submit_button.isClickable = false
-
+            // Convert the currency
             (activity as MainActivity).convertViewModel.getRates(currency_button_left.text.toString()).observe(this, Observer {
                 if (it != null) {
                     base_text.text = "${it.base} ${currency_edit_text.text}"
@@ -48,12 +53,12 @@ class ConvertFragment: Fragment() {
                         "${currency_button_right.text} ${(currency_edit_text.text.toString().toDouble()) * (it.rates[currency_button_right.text].toString().toDouble())}"
                     content_motion_layout.setTransition(R.id.start_to_end)
                     content_motion_layout.transitionToEnd()
-                } else {
-                    // 2 things: 1) no internet 2) no response
+                } else { // 1) no internet 2) no response
+
                 }
                 submit_button.isClickable = true
             })
-        } else {
+        } else { // No amount put in the EditText
             Snackbar.make(content_motion_layout, "Enter an amount", Snackbar.LENGTH_LONG).show()
         }
     }
