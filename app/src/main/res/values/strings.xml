@@ -14,7 +14,7 @@
     <string name="to_convertfragment">To</string>
     <string name="is_convertfragment">is</string>
     <string name="update_convertfragment">Rates are updated daily</string>
-    <string name="date_convertfragment">Last updated on: </string>
+    <string name="date_convertfragment">Last updated on:&#160;</string>
     <string name="base_convertfragment">%1$s %2$.2f</string>
     <string name="conversion_convertfragment">%1$s %2$.2f</string>
 
@@ -22,7 +22,7 @@
     <string name="cd_swap_ic">Swap Icon</string>
 
     <!-- SnackBar Messages -->
-    <string name="no_amount_snackbar">Enter an amount</string>
+    <string name="no_amount_snackbar">Enter an amoun0t</string>
     <string name="no_connection_snackbar">No Internet Connection</string>
     <string name="no_api_snackbar">Server not available</string>
 

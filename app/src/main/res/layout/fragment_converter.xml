@@ -1,274 +1,285 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.motion.widget.MotionLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_motion_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layoutDescription="@xml/fragment_converter_scene">
 
-    <LinearLayout
-        android:id="@+id/results_li"
+<layout>
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.matthew.carvalhodagenais.modernaconverter.viewmodels.ConvertViewModel" />
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/content_motion_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingTop="32dp"
-        android:paddingBottom="32dp"
-        app:layout_constraintTop_toBottomOf="parent"
-        tools:layout_editor_absoluteX="53dp">
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/fragment_converter_scene">
 
-        <TextView
-            android:id="@+id/base_text"
+        <LinearLayout
+            android:id="@+id/results_li"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="32dp"
+            android:paddingBottom="32dp"
+            app:layout_constraintTop_toBottomOf="parent"
+            tools:layout_editor_absoluteX="53dp">
+
+            <TextView
+                android:id="@+id/base_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:fontFamily="@font/sarabun"
+                android:text="EUR 0.00"
+                android:textColor="?android:textColorSecondary"
+                android:textStyle="italic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/sarabun"
+                android:text="@string/is_convertfragment"
+                android:textColor="?android:textColorSecondary"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/conversion_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:fontFamily="@font/sarabun"
+                android:gravity="center"
+                android:text="USD 200,000.00"
+                android:textColor="?android:textColorSecondary"
+                android:textSize="@dimen/large_text"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/currency_button_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:fontFamily="@font/sarabun"
-            android:text="EUR 0.00"
+            android:background="@drawable/button_custom_flag"
+            android:drawableStart="@drawable/ic_usd"
+            android:text="USD"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.465" />
+
+        <TextView
+            android:id="@+id/header_top_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/header_top_text_convertfragment"
             android:textColor="?android:textColorSecondary"
-            android:textStyle="italic" />
+            android:textSize="@dimen/big_text"
+            android:fontFamily="@font/sarabun"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.15" />
 
         <TextView
+            android:id="@+id/header_bottom_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/sarabun"
-            android:text="@string/is_convertfragment"
-            android:textColor="?android:textColorSecondary"
-            android:textStyle="italic" />
-
-        <TextView
-            android:id="@+id/conversion_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:fontFamily="@font/sarabun"
-            android:gravity="center"
-            android:text="USD 200,000.00"
+            android:text="@string/header_bottom_text_convertfragment"
             android:textColor="?android:textColorSecondary"
             android:textSize="@dimen/large_text"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="@font/sarabun"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.196" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/calculation_header_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calculation_text_convertfragment"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="@dimen/large_text"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            android:fontFamily="@font/sarabun"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.196" />
 
-    <Button
-        android:id="@+id/currency_button_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_custom_flag"
-        android:drawableStart="@drawable/ic_usd"
-        android:text="USD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.465" />
+        <EditText
+            android:id="@+id/currency_edit_text"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_border"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.355" />
 
-    <TextView
-        android:id="@+id/header_top_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/header_top_text_convertfragment"
-        android:textColor="?android:textColorSecondary"
-        android:textSize="@dimen/big_text"
-        android:fontFamily="@font/sarabun"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
+        <ImageView
+            android:id="@+id/swap_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cd_swap_ic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.465"
+            app:srcCompat="@drawable/ic_baseline_swap_48" />
 
-    <TextView
-        android:id="@+id/header_bottom_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/header_bottom_text_convertfragment"
-        android:textColor="?android:textColorSecondary"
-        android:textSize="@dimen/large_text"
-        android:textStyle="bold"
-        android:fontFamily="@font/sarabun"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.196" />
+        <Button
+            android:id="@+id/currency_button_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_custom_flag"
+            android:drawableStart="@drawable/ic_eur"
+            android:text="EUR"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.746"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.465" />
 
-    <TextView
-        android:id="@+id/calculation_header_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/calculation_text_convertfragment"
-        android:textColor="?android:textColorSecondary"
-        android:textSize="@dimen/large_text"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        android:fontFamily="@font/sarabun"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.196" />
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="164dp"
+            android:layout_height="60dp"
+            android:background="@drawable/button_custom_submit"
+            android:text="@string/convert_button_convertfragment"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="@dimen/medium_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.618" />
 
-    <EditText
-        android:id="@+id/currency_edit_text"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/edit_text_border"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.355" />
+        <TextView
+            android:id="@+id/paragraph_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/paragraph_text_convertfragment"
+            android:textColor="?android:textColorSecondary"
+            android:textStyle="italic"
+            android:fontFamily="@font/sarabun"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.837" />
 
-    <ImageView
-        android:id="@+id/swap_image_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/cd_swap_ic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.465"
-        app:srcCompat="@drawable/ic_baseline_swap_48" />
+        <TextView
+            android:id="@+id/bank_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/bank_text_convertfragment"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="@dimen/medium_text"
+            android:textStyle="bold|italic"
+            android:fontFamily="@font/sarabun"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.871" />
 
-    <Button
-        android:id="@+id/currency_button_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_custom_flag"
-        android:drawableStart="@drawable/ic_eur"
-        android:text="EUR"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.746"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.465" />
+        <TextView
+            android:id="@+id/from_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/from_convertfragment"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="@dimen/small_text"
+            android:fontFamily="@font/sarabun"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.224"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.418" />
 
-    <Button
-        android:id="@+id/submit_button"
-        android:layout_width="164dp"
-        android:layout_height="60dp"
-        android:background="@drawable/button_custom_submit"
-        android:text="@string/convert_button_convertfragment"
-        android:textColor="?android:textColorSecondary"
-        android:textSize="@dimen/medium_text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.618" />
+        <TextView
+            android:id="@+id/to_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/to_convertfragment"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="@dimen/small_text"
+            android:fontFamily="@font/sarabun"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.783"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.418" />
 
-    <TextView
-        android:id="@+id/paragraph_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/paragraph_text_convertfragment"
-        android:textColor="?android:textColorSecondary"
-        android:textStyle="italic"
-        android:fontFamily="@font/sarabun"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.837" />
+        <TextView
+            android:id="@+id/update_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sarabun"
+            android:text="@string/update_convertfragment"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="@dimen/medium_text"
+            android:textStyle="italic"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.728" />
 
-    <TextView
-        android:id="@+id/bank_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/bank_text_convertfragment"
-        android:textColor="?android:textColorSecondary"
-        android:textSize="@dimen/medium_text"
-        android:textStyle="bold|italic"
-        android:fontFamily="@font/sarabun"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.871" />
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sarabun"
+            android:gravity="center"
+            android:text="@{@string/date_convertfragment + viewmodel.todayAsDate}"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="@dimen/big_text"
+            android:textStyle="bold|italic"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.765" />
 
-    <TextView
-        android:id="@+id/from_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/from_convertfragment"
-        android:textColor="?android:textColorSecondary"
-        android:textSize="@dimen/small_text"
-        android:fontFamily="@font/sarabun"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.224"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.418" />
+    </androidx.constraintlayout.motion.widget.MotionLayout>
 
-    <TextView
-        android:id="@+id/to_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/to_convertfragment"
-        android:textColor="?android:textColorSecondary"
-        android:textSize="@dimen/small_text"
-        android:fontFamily="@font/sarabun"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.783"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.418" />
-
-    <TextView
-        android:id="@+id/update_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sarabun"
-        android:text="@string/update_convertfragment"
-        android:textColor="?android:textColorSecondary"
-        android:textSize="@dimen/medium_text"
-        android:textStyle="italic"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.728" />
-
-    <TextView
-        android:id="@+id/date_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sarabun"
-        android:gravity="center"
-        android:text="@string/date_convertfragment"
-        android:textColor="?android:textColorSecondary"
-        android:textSize="@dimen/big_text"
-        android:textStyle="bold|italic"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.765" />
-
-</androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

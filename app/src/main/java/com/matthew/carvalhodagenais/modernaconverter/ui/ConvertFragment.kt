@@ -6,23 +6,34 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.matthew.carvalhodagenais.modernaconverter.MainActivity
 import com.matthew.carvalhodagenais.modernaconverter.R
+import com.matthew.carvalhodagenais.modernaconverter.databinding.FragmentConverterBinding
 import com.matthew.carvalhodagenais.modernaconverter.utils.NetworkConnectivityUtil
+import com.matthew.carvalhodagenais.modernaconverter.viewmodels.ConvertViewModel
 import kotlinx.android.synthetic.main.fragment_converter.*
 
 class ConvertFragment: Fragment() {
 
+    private lateinit var viewModel: ConvertViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_converter, container, false)
+        viewModel = (activity as MainActivity).convertViewModel
+        val binding = DataBindingUtil.inflate<FragmentConverterBinding>(
+            inflater, R.layout.fragment_converter, container, false
+        ).apply {
+            viewmodel = viewModel
+        }
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -44,7 +55,7 @@ class ConvertFragment: Fragment() {
             imm.hideSoftInputFromWindow(view?.windowToken, 0)
 
             // Convert the currency and set the TextViews with the proper strings
-            (activity as MainActivity).convertViewModel.getRates(currency_button_left.text.toString()).observe(this, Observer {
+            viewModel.getRates(currency_button_left.text.toString()).observe(this, Observer {
                 if (it != null) {
                     base_text.text =
                         String.format(resources.getString(R.string.base_convertfragment),
