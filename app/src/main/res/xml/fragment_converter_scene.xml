@@ -385,10 +385,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintVertical_bias="0.945"
-            motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintHorizontal_bias="0.493"
-            motion:layout_constraintStart_toStartOf="parent"
             android:id="@+id/paragraph_text" />
         <Constraint
             motion:layout_constraintEnd_toEndOf="parent"
@@ -411,7 +407,7 @@
             motion:layout_constraintStart_toStartOf="parent"
             android:id="@+id/header_bottom_text" />
         <Constraint
-            motion:layout_constraintVertical_bias="0.18"
+            motion:layout_constraintVertical_bias="0.22000003"
             android:layout_height="wrap_content"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
@@ -425,13 +421,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintVertical_bias="0.24000001"
+            motion:layout_constraintVertical_bias="0.275"
             motion:layout_constraintHorizontal_bias="0.224"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             android:id="@+id/from_text" />
         <Constraint
-            motion:layout_constraintVertical_bias="0.27999997"
+            motion:layout_constraintVertical_bias="0.31"
             android:layout_height="wrap_content"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
@@ -445,13 +441,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintVertical_bias="0.24000001"
+            motion:layout_constraintVertical_bias="0.275"
             motion:layout_constraintHorizontal_bias="0.780"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             android:id="@+id/to_text" />
         <Constraint
-            motion:layout_constraintVertical_bias="0.27999997"
+            motion:layout_constraintVertical_bias="0.31"
             android:layout_height="wrap_content"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
@@ -461,7 +457,7 @@
             android:layout_width="wrap_content"
             android:id="@+id/swap_image_view" />
         <Constraint
-            motion:layout_constraintVertical_bias="0.37"
+            motion:layout_constraintVertical_bias="0.42"
             android:layout_height="58dp"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
@@ -471,7 +467,7 @@
             android:layout_width="256dp"
             android:id="@+id/submit_button" />
         <Constraint
-            motion:layout_constraintVertical_bias="0.27999997"
+            motion:layout_constraintVertical_bias="0.31"
             android:layout_height="wrap_content"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
@@ -488,7 +484,7 @@
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintVertical_bias="0.614"
+            motion:layout_constraintVertical_bias="0.702"
             motion:layout_constraintHorizontal_bias="0.0" />
         <Constraint
             motion:layout_constraintVertical_bias="0.100000024"
@@ -501,22 +497,24 @@
             android:layout_width="wrap_content"
             android:id="@+id/calculation_header_text" />
         <Constraint
-            motion:layout_constraintVertical_bias="0.842"
+            motion:layout_constraintVertical_bias="0.886"
             android:layout_height="wrap_content"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="wrap_content"
-            android:id="@+id/update_text" />
+            android:id="@+id/update_text"
+            motion:layout_constraintHorizontal_bias="0.497" />
         <Constraint
-            motion:layout_constraintVertical_bias="0.885"
+            motion:layout_constraintVertical_bias="0.935"
             android:layout_height="wrap_content"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="wrap_content"
-            android:id="@+id/date_text" />
+            android:id="@+id/date_text"
+            motion:layout_constraintHorizontal_bias="0.497" />
     </ConstraintSet>
 </MotionScene>

@@ -25,19 +25,19 @@
             android:layout_gravity="center"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
+            android:fontFamily="@font/sarabun"
             android:text="EUR 0.00"
             android:textColor="?android:textColorSecondary"
-            android:textStyle="italic"
-            android:fontFamily="@font/sarabun"/>
+            android:textStyle="italic" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/sarabun"
             android:text="@string/is_convertfragment"
             android:textColor="?android:textColorSecondary"
-            android:textStyle="italic"
-            android:fontFamily="@font/sarabun"/>
+            android:textStyle="italic" />
 
         <TextView
             android:id="@+id/conversion_text"
@@ -46,12 +46,12 @@
             android:layout_gravity="center"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
+            android:fontFamily="@font/sarabun"
             android:gravity="center"
             android:text="USD 200,000.00"
             android:textColor="?android:textColorSecondary"
             android:textSize="@dimen/large_text"
-            android:textStyle="bold"
-            android:fontFamily="@font/sarabun"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -240,12 +240,12 @@
         android:id="@+id/update_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/sarabun"
         android:text="@string/update_convertfragment"
         android:textColor="?android:textColorSecondary"
         android:textSize="@dimen/medium_text"
         android:textStyle="italic"
         android:visibility="invisible"
-        android:fontFamily="@font/sarabun"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -257,13 +257,13 @@
         android:id="@+id/date_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/sarabun"
         android:gravity="center"
         android:text="@string/date_convertfragment"
         android:textColor="?android:textColorSecondary"
         android:textSize="@dimen/big_text"
         android:textStyle="bold|italic"
         android:visibility="invisible"
-        android:fontFamily="@font/sarabun"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
