@@ -27,7 +27,8 @@
             android:layout_marginEnd="32dp"
             android:text="EUR 0.00"
             android:textColor="?android:textColorSecondary"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:fontFamily="@font/sarabun"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,7 +36,8 @@
             android:layout_gravity="center"
             android:text="@string/is_convertfragment"
             android:textColor="?android:textColorSecondary"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:fontFamily="@font/sarabun"/>
 
         <TextView
             android:id="@+id/conversion_text"
@@ -48,7 +50,8 @@
             android:text="USD 200,000.00"
             android:textColor="?android:textColorSecondary"
             android:textSize="@dimen/large_text"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="@font/sarabun"/>
 
     </LinearLayout>
 
@@ -73,6 +76,7 @@
         android:text="@string/header_top_text_convertfragment"
         android:textColor="?android:textColorSecondary"
         android:textSize="@dimen/big_text"
+        android:fontFamily="@font/sarabun"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -88,6 +92,7 @@
         android:textColor="?android:textColorSecondary"
         android:textSize="@dimen/large_text"
         android:textStyle="bold"
+        android:fontFamily="@font/sarabun"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -104,6 +109,7 @@
         android:textSize="@dimen/large_text"
         android:textStyle="bold"
         android:visibility="invisible"
+        android:fontFamily="@font/sarabun"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -175,6 +181,7 @@
         android:text="@string/paragraph_text_convertfragment"
         android:textColor="?android:textColorSecondary"
         android:textStyle="italic"
+        android:fontFamily="@font/sarabun"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -191,6 +198,7 @@
         android:textColor="?android:textColorSecondary"
         android:textSize="@dimen/medium_text"
         android:textStyle="bold|italic"
+        android:fontFamily="@font/sarabun"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -205,6 +213,7 @@
         android:text="@string/from_convertfragment"
         android:textColor="?android:textColorSecondary"
         android:textSize="@dimen/small_text"
+        android:fontFamily="@font/sarabun"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.224"
@@ -219,6 +228,7 @@
         android:text="@string/to_convertfragment"
         android:textColor="?android:textColorSecondary"
         android:textSize="@dimen/small_text"
+        android:fontFamily="@font/sarabun"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.783"
@@ -235,6 +245,7 @@
         android:textSize="@dimen/medium_text"
         android:textStyle="italic"
         android:visibility="invisible"
+        android:fontFamily="@font/sarabun"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -252,6 +263,7 @@
         android:textSize="@dimen/big_text"
         android:textStyle="bold|italic"
         android:visibility="invisible"
+        android:fontFamily="@font/sarabun"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

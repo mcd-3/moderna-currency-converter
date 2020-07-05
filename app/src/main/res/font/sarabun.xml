@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="200"
+        android:font="@font/sarabun_light" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="700"
+        android:font="@font/sarabun_medium" />
+    <font
+        android:fontStyle="italic"
+        android:fontWeight="200"
+        android:font="@font/sarabun_light_italic" />
+    <font
+        android:fontStyle="italic"
+        android:fontWeight="700"
+        android:font="@font/sarabun_medium_italic" />
+</font-family>

@@ -38,6 +38,7 @@ class ConvertFragment: Fragment() {
         if (currency_edit_text.text.toString().trim() != "") {
             submit_button.isClickable = false
 
+
             // Close the keyboard
             val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(view?.windowToken, 0)
