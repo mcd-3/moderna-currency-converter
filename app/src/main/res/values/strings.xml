@@ -23,7 +23,7 @@
     <string name="cd_swap_ic">Swap Icon</string>
 
     <!-- SnackBar Messages -->
-    <string name="no_amount_snackbar">Enter an amoun0t</string>
+    <string name="no_amount_snackbar">Enter an amount</string>
     <string name="no_connection_snackbar">No Internet Connection</string>
     <string name="no_api_snackbar">Server not available</string>
 
