@@ -19,6 +19,7 @@ import com.matthew.carvalhodagenais.modernaconverter.adapters.CurrencySpinnerAda
 import com.matthew.carvalhodagenais.modernaconverter.data.entities.Currency
 import com.matthew.carvalhodagenais.modernaconverter.databinding.FragmentConverterBinding
 import com.matthew.carvalhodagenais.modernaconverter.utils.CurrencyArrayUtil
+import com.matthew.carvalhodagenais.modernaconverter.utils.ImageViewSwapperUtil
 import com.matthew.carvalhodagenais.modernaconverter.utils.NetworkConnectivityUtil
 import com.matthew.carvalhodagenais.modernaconverter.viewmodels.ConvertViewModel
 import kotlinx.android.synthetic.main.fragment_converter.*
@@ -57,10 +58,10 @@ class ConvertFragment: Fragment() {
 
         // Set adapter, selection, and listeners for spinners
         currency_button_left.adapter = spinnerAdapter
-        currency_button_left.setSelection(spinnerAdapter.getPositionFromCurrency(fromCurrency!!))
+        currency_button_left.setSelection(spinnerAdapter.getPosition(fromCurrency))
         currency_button_left.onItemSelectedListener = spinnerOnItemSelectedListener
         currency_button_right.adapter = spinnerAdapter
-        currency_button_right.setSelection(spinnerAdapter.getPositionFromCurrency(toCurrency!!))
+        currency_button_right.setSelection(spinnerAdapter.getPosition(toCurrency))
         currency_button_right.onItemSelectedListener = spinnerOnItemSelectedListener
     }
 
@@ -71,6 +72,8 @@ class ConvertFragment: Fragment() {
     private val submitButtonOnClick = View.OnClickListener {
         if (currency_edit_text.text.toString().trim() != "") {
             submit_button.isClickable = false
+
+            ImageViewSwapperUtil(requireContext()).swapToLoading(swap_image_view)
 
             // Close the keyboard
             val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -106,6 +109,7 @@ class ConvertFragment: Fragment() {
                     }
                 }
                 submit_button.isClickable = true
+                ImageViewSwapperUtil(requireContext()).swapToStatic(swap_image_view)
             })
         } else { // No amount put in the EditText
             Snackbar.make(
@@ -126,13 +130,13 @@ class ConvertFragment: Fragment() {
                 if (p0?.id == currency_button_left.id &&
                     currency_button_left.selectedItem as Currency == toCurrency
                 ) { // Change the right spinner
-                    currency_button_right.setSelection(spinnerAdapter.getPositionFromCurrency(fromCurrency!!), true)
+                    currency_button_right.setSelection(spinnerAdapter.getPosition(fromCurrency), true)
                     viewModel.swapCurrencies(fromCurrency!!, toCurrency!!)
                     spinnerSelected = true
                 } else if (p0?.id == currency_button_right.id &&
                     currency_button_right.selectedItem as Currency == fromCurrency
                 ) { // Change the left spinner
-                    currency_button_left.setSelection(spinnerAdapter.getPositionFromCurrency(toCurrency!!), true)
+                    currency_button_left.setSelection(spinnerAdapter.getPosition(toCurrency), true)
                     viewModel.swapCurrencies(fromCurrency!!, toCurrency!!)
                     spinnerSelected = true
                 } else { // Set the currencies to what was selected
@@ -152,6 +156,5 @@ class ConvertFragment: Fragment() {
             // Do nothing
         }
     }
-
 
 }
