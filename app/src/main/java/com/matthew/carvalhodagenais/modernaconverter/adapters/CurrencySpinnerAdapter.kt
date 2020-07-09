@@ -37,6 +37,9 @@ class CurrencySpinnerAdapter(context: Context, currencies: Array<Currency>): Arr
         return -1
     }
 
+    /**
+     * Initialises the spinner and its views
+     */
     private fun initView(position: Int, convertView: View?, parent: ViewGroup): View {
         val newView = LayoutInflater.from(context).inflate(
             R.layout.spinner_currency, parent, false

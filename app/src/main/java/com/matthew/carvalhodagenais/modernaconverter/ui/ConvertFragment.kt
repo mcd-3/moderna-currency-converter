@@ -116,18 +116,22 @@ class ConvertFragment: Fragment() {
         }
     }
 
+    /**
+     * OnItemSelectedListener for currency spinners
+     * Sets the currencies to calculate
+     */
     private val spinnerOnItemSelectedListener = object: AdapterView.OnItemSelectedListener {
         override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
             if (!spinnerSelected) {
                 if (p0?.id == currency_button_left.id &&
                     currency_button_left.selectedItem as Currency == toCurrency
-                ) { // Swap the currencies
+                ) { // Change the right spinner
                     currency_button_right.setSelection(spinnerAdapter.getPositionFromCurrency(fromCurrency!!), true)
                     viewModel.swapCurrencies(fromCurrency!!, toCurrency!!)
                     spinnerSelected = true
                 } else if (p0?.id == currency_button_right.id &&
                     currency_button_right.selectedItem as Currency == fromCurrency
-                ) { // Swap the currencies
+                ) { // Change the left spinner
                     currency_button_left.setSelection(spinnerAdapter.getPositionFromCurrency(toCurrency!!), true)
                     viewModel.swapCurrencies(fromCurrency!!, toCurrency!!)
                     spinnerSelected = true

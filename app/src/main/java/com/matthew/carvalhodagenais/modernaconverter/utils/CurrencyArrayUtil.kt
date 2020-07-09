@@ -6,6 +6,12 @@ import com.matthew.carvalhodagenais.modernaconverter.data.entities.Currency
 
 class CurrencyArrayUtil {
 
+    /**
+     * Creates an array of supported Currency objects
+     *
+     * @param context Context
+     * @return Array<Currency>
+     */
     fun getAllSupportedCurrencies(context: Context): Array<Currency> {
         val codeArray: Array<String> = context.resources.getStringArray(R.array.currency_codes)
         return arrayOf<Currency>(
