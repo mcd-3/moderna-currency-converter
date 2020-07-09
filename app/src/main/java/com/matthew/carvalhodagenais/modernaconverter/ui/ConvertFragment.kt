@@ -31,6 +31,7 @@ class ConvertFragment: Fragment() {
 
     private var fromCurrency: Currency? = null
     private var toCurrency: Currency? = null
+    private var spinnerSelected = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -115,19 +116,30 @@ class ConvertFragment: Fragment() {
         }
     }
 
-    // TODO: This logic is messed up! (for swapping)
     private val spinnerOnItemSelectedListener = object: AdapterView.OnItemSelectedListener {
         override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-            if (currency_button_left.selectedItem as Currency == currency_button_right.selectedItem as Currency) { // Swap the currencies
-                viewModel.swapCurrencies(fromCurrency!!, toCurrency!!)
-                currency_button_left.setSelection(spinnerAdapter.getPositionFromCurrency(fromCurrency!!))
-                currency_button_right.setSelection(spinnerAdapter.getPositionFromCurrency(toCurrency!!))
-            } else { // Set the currencies to what was selected
-                if (p0?.id == currency_button_left.id) {
-                    fromCurrency = currency_button_left.selectedItem as Currency
-                } else {
-                    toCurrency = currency_button_right.selectedItem as Currency
+            if (!spinnerSelected) {
+                if (p0?.id == currency_button_left.id &&
+                    currency_button_left.selectedItem as Currency == toCurrency
+                ) { // Swap the currencies
+                    currency_button_right.setSelection(spinnerAdapter.getPositionFromCurrency(fromCurrency!!), true)
+                    viewModel.swapCurrencies(fromCurrency!!, toCurrency!!)
+                    spinnerSelected = true
+                } else if (p0?.id == currency_button_right.id &&
+                    currency_button_right.selectedItem as Currency == fromCurrency
+                ) { // Swap the currencies
+                    currency_button_left.setSelection(spinnerAdapter.getPositionFromCurrency(toCurrency!!), true)
+                    viewModel.swapCurrencies(fromCurrency!!, toCurrency!!)
+                    spinnerSelected = true
+                } else { // Set the currencies to what was selected
+                    if (p0?.id == currency_button_left.id) {
+                        fromCurrency = currency_button_left.selectedItem as Currency
+                    } else {
+                        toCurrency = currency_button_right.selectedItem as Currency
+                    }
                 }
+            } else {
+                spinnerSelected = false
             }
             (p0!!.getChildAt(0) as TextView).setTextColor(Color.BLACK)
         }
