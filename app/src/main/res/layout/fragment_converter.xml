@@ -67,43 +67,39 @@
             android:id="@+id/header_top_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/sarabun"
             android:text="@string/header_top_text_convertfragment"
             android:textColor="?android:textColorSecondary"
             android:textSize="@dimen/big_text"
-            android:fontFamily="@font/sarabun"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.15" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/header_bottom_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:fontFamily="@font/sarabun"
             android:text="@string/header_bottom_text_convertfragment"
             android:textColor="?android:textColorSecondary"
             android:textSize="@dimen/large_text"
             android:textStyle="bold"
-            android:fontFamily="@font/sarabun"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.196" />
+            app:layout_constraintTop_toBottomOf="@+id/header_top_text" />
 
         <TextView
             android:id="@+id/calculation_header_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/sarabun"
             android:text="@string/calculation_text_convertfragment"
             android:textColor="?android:textColorSecondary"
             android:textSize="@dimen/large_text"
             android:textStyle="bold"
             android:visibility="invisible"
-            android:fontFamily="@font/sarabun"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
@@ -115,120 +111,108 @@
             android:id="@+id/currency_edit_text"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:autofillHints="no"
             android:background="@drawable/edit_text_border"
             android:ems="10"
-            android:inputType="numberDecimal"
             android:hint="@string/edit_text_hint_convertfragment"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.355"
-            android:autofillHints="no" />
+            app:layout_constraintTop_toBottomOf="@+id/header_bottom_text" />
 
         <ImageView
             android:id="@+id/swap_image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
             android:contentDescription="@string/cd_swap_ic"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.465"
+            app:layout_constraintTop_toBottomOf="@+id/currency_edit_text"
             app:srcCompat="@drawable/ic_baseline_swap_48" />
 
         <Spinner
             android:id="@+id/currency_button_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
             android:background="@drawable/button_custom_flag"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.746"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.465" />
+            app:layout_constraintStart_toEndOf="@+id/swap_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/to_text"
+            tools:layout_height="20dp"
+            tools:layout_width="20dp" />
 
         <Button
             android:id="@+id/submit_button"
             android:layout_width="164dp"
             android:layout_height="60dp"
+            android:layout_marginTop="36dp"
             android:background="@drawable/button_custom_submit"
             android:text="@string/convert_button_convertfragment"
             android:textColor="?android:textColorSecondary"
             android:textSize="@dimen/medium_text"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.618" />
+            app:layout_constraintTop_toBottomOf="@+id/swap_image_view" />
 
         <TextView
             android:id="@+id/paragraph_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/sarabun"
             android:gravity="center"
             android:text="@string/paragraph_text_convertfragment"
             android:textColor="?android:textColorSecondary"
             android:textStyle="italic"
-            android:fontFamily="@font/sarabun"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/bank_text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.837" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/bank_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/sarabun"
             android:gravity="center"
             android:text="@string/bank_text_convertfragment"
             android:textColor="?android:textColorSecondary"
             android:textSize="@dimen/medium_text"
             android:textStyle="bold|italic"
-            android:fontFamily="@font/sarabun"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.871" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/from_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="77dp"
+            android:fontFamily="@font/sarabun"
             android:text="@string/from_convertfragment"
             android:textColor="?android:textColorSecondary"
             android:textSize="@dimen/small_text"
-            android:fontFamily="@font/sarabun"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.224"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.418" />
+            app:layout_constraintEnd_toStartOf="@+id/swap_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/currency_edit_text" />
 
         <TextView
             android:id="@+id/to_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="94dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/sarabun"
             android:text="@string/to_convertfragment"
             android:textColor="?android:textColorSecondary"
             android:textSize="@dimen/small_text"
-            android:fontFamily="@font/sarabun"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.783"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.418" />
+            app:layout_constraintStart_toEndOf="@+id/swap_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/currency_edit_text" />
 
         <TextView
             android:id="@+id/update_text"
@@ -269,13 +253,12 @@
             android:id="@+id/currency_button_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
             android:background="@drawable/button_border_blue"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.465" />
+            app:layout_constraintEnd_toStartOf="@+id/swap_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/from_text"
+            tools:layout_height="20dp"
+            tools:layout_width="20dp" />
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
 
