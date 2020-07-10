@@ -6,6 +6,11 @@ import com.matthew.carvalhodagenais.modernaconverter.data.entities.Currency
 
 class CurrencyArrayUtil {
 
+    companion object {
+        const val USD_INDEX = 31
+        const val EUR_INDEX = 8
+    }
+
     /**
      * Creates an array of supported Currency objects
      *

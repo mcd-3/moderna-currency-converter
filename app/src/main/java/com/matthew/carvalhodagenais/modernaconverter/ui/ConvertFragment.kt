@@ -41,8 +41,8 @@ class ConvertFragment: Fragment() {
     ): View? {
         viewModel = (activity as MainActivity).convertViewModel
         currencies = CurrencyArrayUtil().getAllSupportedCurrencies(requireContext())
-        fromCurrency = currencies[0]
-        toCurrency = currencies[1]
+        fromCurrency = currencies[CurrencyArrayUtil.USD_INDEX]
+        toCurrency = currencies[CurrencyArrayUtil.EUR_INDEX]
         val binding = DataBindingUtil.inflate<FragmentConverterBinding>(
             inflater, R.layout.fragment_converter, container, false
         ).apply {
