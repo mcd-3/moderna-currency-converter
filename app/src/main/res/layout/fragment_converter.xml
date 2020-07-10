@@ -94,12 +94,12 @@
             android:id="@+id/calculation_header_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/sarabun"
             android:text="@string/calculation_text_convertfragment"
             android:textColor="?android:textColorSecondary"
             android:textSize="@dimen/large_text"
             android:textStyle="bold"
             android:visibility="invisible"
-            android:fontFamily="@font/sarabun"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
@@ -163,8 +163,6 @@
             android:id="@+id/paragraph_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="180dp"
-            android:layout_marginBottom="12dp"
             android:fontFamily="@font/sarabun"
             android:gravity="center"
             android:text="@string/paragraph_text_convertfragment"
@@ -172,15 +170,12 @@
             android:textStyle="italic"
             app:layout_constraintBottom_toTopOf="@+id/bank_text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/submit_button"
-            app:layout_constraintVertical_bias="0.00999999" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/bank_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/sarabun"
             android:gravity="center"
@@ -191,8 +186,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/paragraph_text" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/from_text"
