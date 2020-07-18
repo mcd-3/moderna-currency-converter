@@ -157,6 +157,20 @@
                motion:motionTarget="@+id/submit_button"
                motion:framePosition="100"
                android:alpha="1" />
+
+           <!-- Results -->
+           <KeyAttribute
+               motion:motionTarget="@+id/results_li"
+               motion:framePosition="0"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/results_li"
+               motion:framePosition="50"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/results_li"
+               motion:framePosition="100"
+               android:alpha="0" />
        </KeyFrameSet>
     </Transition>
 
