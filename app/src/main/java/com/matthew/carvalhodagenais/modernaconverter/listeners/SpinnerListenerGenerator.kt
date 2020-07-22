@@ -6,10 +6,18 @@ import android.widget.AdapterView
 import android.widget.Spinner
 import android.widget.TextView
 import com.matthew.carvalhodagenais.modernaconverter.data.entities.Currency
-import kotlinx.android.synthetic.main.fragment_converter.*
 
 class SpinnerListenerGenerator {
 
+    /**
+     * OnItemSelectedListener for the currency spinners
+     *
+     * @param fromCurrency Currency?
+     * @param toCurrency Currency?
+     * @param spinnerOne Spinner
+     * @param spinnerTwo Spinner
+     * @return AdapterView.OnItemSelectedListener
+     */
     fun generateCurrencyListener(
         fromCurrency: Currency?,
         toCurrency: Currency?,
