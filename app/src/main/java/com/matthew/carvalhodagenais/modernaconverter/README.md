@@ -14,6 +14,9 @@ Data models and how to retrieve this data
  ### factories
  Factory classes, mostly to create ViewModels
  
+ ### listeners
+ Classes that generate listeners for views
+ 
  ### ui
  Fragments for each for each page in the app
  
