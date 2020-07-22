@@ -32,7 +32,6 @@ class ConvertFragment: Fragment() {
 
     private var fromCurrency: Currency? = null
     private var toCurrency: Currency? = null
-    private var spinnerSelected = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -71,46 +70,54 @@ class ConvertFragment: Fragment() {
      */
     private val submitButtonOnClick = View.OnClickListener {
         if (currency_edit_text.text.toString().trim() != "") {
-            submit_button.isClickable = false
+            if (fromCurrency != toCurrency) {
+                submit_button.isClickable = false
 
-            ImageViewSwapperUtil(requireContext()).swapToLoading(swap_image_view)
+                ImageViewSwapperUtil(requireContext()).swapToLoading(swap_image_view)
 
-            // Close the keyboard
-            val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(view?.windowToken, 0)
+                // Close the keyboard
+                val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(view?.windowToken, 0)
 
-            // Convert the currency and set the TextViews with the proper strings
-            viewModel.getRates(fromCurrency!!.code).observe(this, Observer {
-                if (it != null) {
-                    base_text.text =
-                        String.format(resources.getString(R.string.base_convertfragment),
-                            it.base,
-                            currency_edit_text.text.toString().toBigDecimal())
-                    conversion_text.text =
-                        String.format(resources.getString(R.string.conversion_convertfragment),
-                            toCurrency!!.code,
-                            (currency_edit_text.text.toString().toBigDecimal())
-                                    * (it.rates[toCurrency!!.code].toString().toBigDecimal()))
-                    content_motion_layout.setTransition(R.id.start_to_end)
-                    content_motion_layout.transitionToEnd()
-                } else { // 1) no internet 2) no response
-                    if (NetworkConnectivityUtil().hasNetworkConnection(requireContext())) {
-                        Snackbar.make(
-                            content_motion_layout,
-                            resources.getString(R.string.no_connection_snackbar),
-                            Snackbar.LENGTH_LONG
-                        ).show()
-                    } else {
-                        Snackbar.make(
-                            content_motion_layout,
-                            resources.getString(R.string.no_api_snackbar),
-                            Snackbar.LENGTH_LONG
-                        ).show()
+                // Convert the currency and set the TextViews with the proper strings
+                viewModel.getRates(fromCurrency!!.code).observe(this, Observer {
+                    if (it != null) {
+                        base_text.text =
+                            String.format(resources.getString(R.string.base_convertfragment),
+                                it.base,
+                                currency_edit_text.text.toString().toBigDecimal())
+                        conversion_text.text =
+                            String.format(resources.getString(R.string.conversion_convertfragment),
+                                toCurrency!!.code,
+                                (currency_edit_text.text.toString().toBigDecimal())
+                                        * (it.rates[toCurrency!!.code].toString().toBigDecimal()))
+                        content_motion_layout.setTransition(R.id.start_to_end)
+                        content_motion_layout.transitionToEnd()
+                    } else { // 1) no internet 2) no response
+                        if (NetworkConnectivityUtil().hasNetworkConnection(requireContext())) {
+                            Snackbar.make(
+                                content_motion_layout,
+                                resources.getString(R.string.no_connection_snackbar),
+                                Snackbar.LENGTH_LONG
+                            ).show()
+                        } else {
+                            Snackbar.make(
+                                content_motion_layout,
+                                resources.getString(R.string.no_api_snackbar),
+                                Snackbar.LENGTH_LONG
+                            ).show()
+                        }
                     }
-                }
-                submit_button.isClickable = true
-                ImageViewSwapperUtil(requireContext()).swapToStatic(swap_image_view)
-            })
+                    submit_button.isClickable = true
+                    ImageViewSwapperUtil(requireContext()).swapToStatic(swap_image_view)
+                })
+            } else {
+                Snackbar.make(
+                    content_motion_layout,
+                    "Pick 2 different currencies",
+                    Snackbar.LENGTH_LONG
+                ).show()
+            }
         } else { // No amount put in the EditText
             Snackbar.make(
                 content_motion_layout,
@@ -126,29 +133,8 @@ class ConvertFragment: Fragment() {
      */
     private val spinnerOnItemSelectedListener = object: AdapterView.OnItemSelectedListener {
         override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-            if (!spinnerSelected) {
-                if (p0?.id == currency_button_left.id &&
-                    currency_button_left.selectedItem as Currency == toCurrency
-                ) { // Change the right spinner
-                    currency_button_right.setSelection(spinnerAdapter.getPosition(fromCurrency), true)
-                    viewModel.swapCurrencies(fromCurrency!!, toCurrency!!)
-                    spinnerSelected = true
-                } else if (p0?.id == currency_button_right.id &&
-                    currency_button_right.selectedItem as Currency == fromCurrency
-                ) { // Change the left spinner
-                    currency_button_left.setSelection(spinnerAdapter.getPosition(toCurrency), true)
-                    viewModel.swapCurrencies(fromCurrency!!, toCurrency!!)
-                    spinnerSelected = true
-                } else { // Set the currencies to what was selected
-                    if (p0?.id == currency_button_left.id) {
-                        fromCurrency = currency_button_left.selectedItem as Currency
-                    } else {
-                        toCurrency = currency_button_right.selectedItem as Currency
-                    }
-                }
-            } else {
-                spinnerSelected = false
-            }
+            fromCurrency = currency_button_left.selectedItem as Currency
+            toCurrency = currency_button_right.selectedItem as Currency
             (p0!!.getChildAt(0) as TextView).setTextColor(Color.BLACK)
         }
 
