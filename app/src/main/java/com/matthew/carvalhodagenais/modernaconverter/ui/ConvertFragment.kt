@@ -18,6 +18,7 @@ import com.matthew.carvalhodagenais.modernaconverter.R
 import com.matthew.carvalhodagenais.modernaconverter.adapters.CurrencySpinnerAdapter
 import com.matthew.carvalhodagenais.modernaconverter.data.entities.Currency
 import com.matthew.carvalhodagenais.modernaconverter.databinding.FragmentConverterBinding
+import com.matthew.carvalhodagenais.modernaconverter.listeners.SpinnerListenerGenerator
 import com.matthew.carvalhodagenais.modernaconverter.utils.CurrencyArrayUtil
 import com.matthew.carvalhodagenais.modernaconverter.utils.ImageViewSwapperUtil
 import com.matthew.carvalhodagenais.modernaconverter.utils.NetworkConnectivityUtil
@@ -56,12 +57,16 @@ class ConvertFragment: Fragment() {
         spinnerAdapter = CurrencySpinnerAdapter(requireContext(), currencies)
 
         // Set adapter, selection, and listeners for spinners
+        val slg = SpinnerListenerGenerator()
+        val listener = slg.generateCurrencyListener(
+            fromCurrency, toCurrency, currency_button_left, currency_button_right
+        )
         currency_button_left.adapter = spinnerAdapter
         currency_button_left.setSelection(spinnerAdapter.getPosition(fromCurrency))
-        currency_button_left.onItemSelectedListener = spinnerOnItemSelectedListener
+        currency_button_left.onItemSelectedListener = listener
         currency_button_right.adapter = spinnerAdapter
         currency_button_right.setSelection(spinnerAdapter.getPosition(toCurrency))
-        currency_button_right.onItemSelectedListener = spinnerOnItemSelectedListener
+        currency_button_right.onItemSelectedListener = listener
     }
 
     /**
@@ -124,22 +129,6 @@ class ConvertFragment: Fragment() {
                 resources.getString(R.string.no_amount_snackbar),
                 Snackbar.LENGTH_LONG
             ).show()
-        }
-    }
-
-    /**
-     * OnItemSelectedListener for currency spinners
-     * Sets the currencies to calculate
-     */
-    private val spinnerOnItemSelectedListener = object: AdapterView.OnItemSelectedListener {
-        override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-            fromCurrency = currency_button_left.selectedItem as Currency
-            toCurrency = currency_button_right.selectedItem as Currency
-            (p0!!.getChildAt(0) as TextView).setTextColor(Color.BLACK)
-        }
-
-        override fun onNothingSelected(p0: AdapterView<*>?) {
-            // Do nothing
         }
     }
 
