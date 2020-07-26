@@ -9,7 +9,7 @@
     <string name="calculation_text_convertfragment">Your Calculation</string>
     <string name="convert_button_convertfragment">Convert</string>
     <string name="paragraph_text_convertfragment">Data fetched using exchangeratesapi.io\nWith rates provided by</string>
-    <string name="bank_text_convertfragment">The Central European Bank</string>
+    <string name="bank_text_convertfragment">The European Central Bank</string>
     <string name="edit_text_hint_convertfragment">Enter an amount&#8230;</string>
     <string name="from_convertfragment">From</string>
     <string name="to_convertfragment">To</string>
